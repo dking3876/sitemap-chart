@@ -12,6 +12,9 @@ ul{
         margin:0;
     }
 }
+*{
+    box-sizing: border-box;
+}
 .page{
     width:calc(var(--card-size, 200px) - 1rem - 1px);
     height:calc(var(--card-size, 200px) * .4);
@@ -21,13 +24,13 @@ ul{
     margin:auto;
     
     box-sizing: border-box;
-    -webkit-box-shadow: 5px 6px 13px -1px #000000; 
-    box-shadow: 5px 6px 13px -1px #000000;
+    // -webkit-box-shadow: 5px 6px 13px -1px #000000; 
+    box-shadow: 3px 3px 7px -1px #000000;
     font-size:calc(var(--card-size) / 12);
     cursor: pointer;
     span{
         display:block;
-        padding:.5rem 0 .5rem .5rem;
+        padding:0 .5rem .25rem;
     }
     .url{
         font-size:.9em;
@@ -121,7 +124,7 @@ ul{
             content:"";
             display:block;
             position:absolute;
-            left:1rem;
+            left:calc(var(--gap-size) / 4);
             top:0;
             height:calc(100% - var(--gap-size));
             background-color:var(--card-color);
@@ -135,7 +138,8 @@ ul{
             padding-bottom:calc(var(--gap-size) / 2);
         }
          .page{
-            width:calc(var(--card-size, 200px) - var(--gap-size) - 1px);
+            // width:calc(var(--card-size, 200px) - var(--gap-size) - 1px);
+            width:calc(var(--card-size, 200px) - 1rem - 1px - (var(--gap-size) / 4) - calc(var(--gap-size) / 4 + 3px));
             position: relative;
             margin-left:auto;
             margin-right:0;
@@ -143,9 +147,9 @@ ul{
                 content:"";
                 display:block;
                 position:absolute;
-                left:calc(var(--gap-size) / 4 * -1 - 3px);
-                top:50%;
-                transform:translateY(-2px);
+                left:0;
+                bottom:calc(var(--gap-size) / 2 - 3px);
+                transform:translateX(calc(-100% - 5px));
                 height:3px;
                 background-color:var(--card-color);
                 width:calc(var(--gap-size) / 4 + 3px);
@@ -158,23 +162,24 @@ ul{
         
         padding-top:calc(var(--gap-size) / 2);
         position:relative;
-        margin-left:var(--gap-size);
+        // margin-left:var(--gap-size);
         &:before{
             content:"";
             display:block;
             position:absolute;
-            left:0;
+            left:calc(var(--gap-size) - 5px);
             top:0;
-            height:calc(100% - (var(--card-size, 200px) * .4) - (var(--gap-size) / 2));
+            height:calc(100% - var(--gap-size));
             background-color:var(--card-color);
-            width:3px;
+            width:2px;
             border-bottom-left-radius: 3px;
             border-bottom-right-radius: 3px;
-            -webkit-box-shadow: 3px 1px 4px 0px #000000; 
-            box-shadow: 3px 1px 4px 0px #000000;
+            -webkit-box-shadow: 1px 1px 4px 0px #000000; 
+            box-shadow: 1px 1px 4px 0px #000000;
         }
         .page{
-            width:calc(var(--card-size, 200px) - (var(--gap-size) * 1.5) - 1px);
+            // width:calc(var(--card-size, 200px) - (var(--gap-size) * 1.5) - 1px);
+            width:calc(var(--card-size, 200px) - 1rem - 1px - (var(--gap-size) / 4) - calc(var(--gap-size) / 4 + 3px) - calc(var(--gap-size) / 2));
             position: relative;
             margin-left:auto;
             margin-right:0;
@@ -184,11 +189,12 @@ ul{
                 display:block;
                 position:absolute;
                 // left:calc(var(--gap-size) / 2 * -1 - 2px);
-                left:-.5rem;
-                top:0;
+                left:0;
+                transform:translateX(-12px);
+                bottom:calc(var(--gap-size) / 2 - 1px);
                 height:2px;
                 background-color:var(--card-color);
-                width:calc(100% + .5rem);
+                width:10px;
                 border-bottom-left-radius:5px;
                 
             }
